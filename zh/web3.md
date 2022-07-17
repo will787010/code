@@ -1,4 +1,4 @@
-# metamask的一些操作
+# metamask的一些操作 #
 
 > 需要安装[metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)，确保页面中加载[web3.js](https://cdn.jsdelivr.net/npm/web3@1.7.4/dist/web3.min.js)
 
@@ -86,4 +86,3 @@ ethereum.on('chainChanged', function (chainId) {
   console.log('chainid changed', chainId)
 })
 ```
-

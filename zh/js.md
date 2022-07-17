@@ -1,3 +1,4 @@
+> lastupdate:  {docsify-updated}
 ## 格式化邮箱
 
 ```js
@@ -134,6 +135,24 @@ function getParameterByName(name) {
 }
 ```
 
+## 获取url参数2
+
+```js
+function getParameter (str) {
+  if (!location.search) return null
+  const result = {}
+  str = str || location.search.slice(1)
+  const arr = str.split('&')
+  arr.forEach(item => {
+    let arr1 = item.split('=')
+    if (arr1.length === 2) {
+      result[arr1[0]] = decodeURIComponent(arr1[1])
+    }
+  })
+  return result
+}
+```
+
 ## 是否在数组中
 
 ```js
@@ -144,7 +163,7 @@ function oneOf (item, arr) {
 ## 简单的yyyy--mm-dd
 
 ```js
-function(datestring) {
+function formateDate (datestring) {
   let date = new Date();
   if (datestring) {
     date = new Date(datestring)
@@ -262,5 +281,25 @@ module.exports = {
     }
   },
   configureWebpack
+}
+```
+
+## 一个简单的深拷贝实现
+
+```js
+function cloneDeep (obj) {
+  var result = Array.isArray(obj) ? [] : {}
+  if (obj && typeof obj === 'object') {
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (typeof obj[key] === 'object') {
+          result[key] = cloneDeep(obj[key])
+        } else {
+          result[key] = obj[key]
+        }
+      }
+    }
+  }
+  return result
 }
 ```
