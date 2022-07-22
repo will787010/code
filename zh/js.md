@@ -163,10 +163,10 @@ function oneOf (item, arr) {
 ## 简单的yyyy--mm-dd
 
 ```js
-function formateDate (datestring) {
+function formateDate (timestamp) {
   let date = new Date();
-  if (datestring) {
-    date = new Date(datestring)
+  if (timestamp) {
+    date = new Date(timestamp)
   }
   const year = date.getFullYear();
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -303,3 +303,21 @@ function cloneDeep (obj) {
   return result
 }
 ```
+
+## 严格的获取类型的函数
+
+```js
+function getType (obj) {
+  return Object.prototype.toString.call(obj).slice(8,-1).toLowerCase()
+}
+```
+
+## 字符串快速反转
+
+```js
+function reverseStr (str) {
+  return str.split('').reverse().join('')
+}
+```
+
+
