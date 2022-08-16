@@ -164,7 +164,7 @@ function oneOf (item, arr) {
 
 ```js
 function formateDate (timestamp) {
-  let date = new Date();
+  let date = new Date()
   if (timestamp) {
     date = new Date(timestamp)
   }
@@ -319,5 +319,8 @@ function reverseStr (str) {
   return str.split('').reverse().join('')
 }
 ```
+## vue history 模式nginx配置
 
-
+```config
+try_files $uri $uri/ /index.html;
+```
