@@ -1,4 +1,5 @@
 > lastupdate:  {docsify-updated}
+
 ## 格式化邮箱
 
 ```js
@@ -117,6 +118,7 @@ function useStorage (storageType = 'sessionStorage') {
   };
 };
 ```
+
 ## 获取url参数
 
 ```js
@@ -160,6 +162,7 @@ function oneOf (item, arr) {
   return arr.indexOf(item) > -1
 }
 ```
+
 ## 简单的yyyy--mm-dd
 
 ```js
@@ -319,6 +322,7 @@ function reverseStr (str) {
   return str.split('').reverse().join('')
 }
 ```
+
 ## vue history 模式nginx配置
 
 ```config
@@ -329,29 +333,29 @@ try_files $uri $uri/ /index.html;
 
 ```js
 function getCookie(name) {
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-    if (arr = document.cookie.match(reg))
-        return unescape(arr[2]);
-    else
-        return "";
+  var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+  if (arr = document.cookie.match(reg))
+    return unescape(arr[2]);
+  else
+    return "";
 }
 ```
 
 ```js
 function setCookie(name, value) {
-    var Days = 30; var exp = new Date();
-    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+  var Days = 30; var exp = new Date();
+  exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+  document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
 }
 ```
 
 ```js
 function delCookie(key) {
-    var date = new Date();
-    date.setTime(date.getTime() - 1);
-    var delValue = getCookie(key);
-    if (!!delValue) {
-        document.cookie = key + '=' + delValue + ';expires=' + date.toGMTString();
-    }
+  var date = new Date();
+  date.setTime(date.getTime() - 1);
+  var delValue = getCookie(key);
+  if (!!delValue) {
+    document.cookie = key + '=' + delValue + ';expires=' + date.toGMTString();
+  }
 }
 ```
