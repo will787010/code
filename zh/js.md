@@ -324,3 +324,34 @@ function reverseStr (str) {
 ```config
 try_files $uri $uri/ /index.html;
 ```
+
+## 获取设置cookie
+
+```js
+function getCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+        return unescape(arr[2]);
+    else
+        return "";
+}
+```
+
+```js
+function setCookie(name, value) {
+    var Days = 30; var exp = new Date();
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+}
+```
+
+```js
+function delCookie(key) {
+    var date = new Date();
+    date.setTime(date.getTime() - 1);
+    var delValue = getCookie(key);
+    if (!!delValue) {
+        document.cookie = key + '=' + delValue + ';expires=' + date.toGMTString();
+    }
+}
+```
