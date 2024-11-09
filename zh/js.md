@@ -363,8 +363,11 @@ function delCookie(key) {
 ## 只能输入数字
 
 ```js
-function inputNum(val, precision = 2, int = 2) {
+function inputNum(val, precision = 2, int = 20) {
   val = String(val);
+  val = val.replace(/^(0\d+)/, function (s) {
+    return s.slice(1)
+  })
   val = val.replace(/[^\d\\.]/g, "");
   if (precision === 0) {
     val = val.replace(/[^\d]/g, "");
