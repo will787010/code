@@ -359,3 +359,23 @@ function delCookie(key) {
   }
 }
 ```
+
+## 只能输入数字
+
+```js
+function inputNum(val, precision = 2, int = 2) {
+  val = String(val);
+  val = val.replace(/[^\d\\.]/g, "");
+  if (precision === 0) {
+    val = val.replace(/[^\d]/g, "");
+  }
+  if (
+    !new RegExp(
+      `^(0|[1-9]\\d{0,${int - 1}})(\\.\\d{0,${precision}})?$`
+    ).test(val)
+  ) {
+    val = val.slice(0, -1);
+  }
+  return val;
+}
+```
